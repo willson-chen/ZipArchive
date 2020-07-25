@@ -645,7 +645,7 @@ int twentyMB = 20 * 1024 * 1024;
 -(NSData*)get20MbNSData {
     NSMutableData* theData = [NSMutableData dataWithCapacity:twentyMB];
     for (long long int i = 0; i < twentyMB/4; i++) {
-        u_int32_t randomBits = arc4random();
+        u_int32_t randomBits = 0;
         [theData appendBytes:(void *)&randomBits length:4];
     }
     return theData;
